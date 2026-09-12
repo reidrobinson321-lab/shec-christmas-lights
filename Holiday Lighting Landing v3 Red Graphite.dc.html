@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Jost:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#131416; }
+  * { box-sizing: border-box; }
+  a { color:#E3565C; text-decoration:none; }
+  a:hover { color:#F08B8F; }
+  input, select, textarea { font-family: inherit; }
+  @keyframes glowpulse { 0%,100% { opacity:.55 } 50% { opacity:.9 } }
+</style>
+</helmet>
+<div style="background:#131416; color:#ECEDEE; font-family:'Jost',system-ui,sans-serif; font-weight:300; overflow-x:hidden; text-wrap:pretty">
+
+  <section style="position:relative; minHeight:min(100svh,860px); display:flex; flexDirection:column; justifyContent:flex-end; padding:28px 20px 44px">
+    <div style="position:absolute; inset:0; overflow:hidden">
+      <div style="position:absolute; inset:0; background:repeating-linear-gradient(135deg,#1C1E21 0 14px,#17191B 14px 28px)"></div>
+      <div style="position:absolute; inset:0; backgroundSize:cover; backgroundPosition:center; backgroundImage:{{ heroPhotoCss }}"></div>
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(19,20,22,.74) 0%,rgba(19,20,22,.34) 38%,rgba(19,20,22,.88) 78%,#131416 100%)"></div>
+    </div>
+
+    <div style="position:relative; display:flex; justifyContent:space-between; alignItems:center; gap:12px; marginBottom:auto">
+      <div style="display:flex; alignItems:center; gap:11px">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/a5VHHvDH22KgS9A3xT6v/media/69bb059c3ee4087ae75d5859.png" alt="Sweet Home Exterior Cleaning" style="width:56px; height:56px; objectFit:contain; flexShrink:0" />
+        <div style="display:flex; flexDirection:column; lineHeight:1.05">
+          <span style="fontFamily:'Playfair Display',serif; fontSize:21px; letterSpacing:.03em; color:#ECEDEE">Sweet Home</span>
+          <span style="fontSize:10px; letterSpacing:.3em; textTransform:uppercase; color:#E3565C">Holiday Lighting</span>
+        </div>
+      </div>
+      <a href="tel:2565635636" style="fontSize:12px; letterSpacing:.18em; textTransform:uppercase; color:#ECEDEE; border:1px solid rgba(193,39,45,.45); padding:9px 14px; borderRadius:2px">256·563·5636</a>
+    </div>
+
+    <div style="position:relative; maxWidth:680px; marginTop:120px">
+      <div style="display:flex; alignItems:center; gap:10px; marginBottom:18px">
+        <span style="width:26px; height:1px; background:#C1272D"></span>
+        <span style="fontSize:11px; letterSpacing:.3em; textTransform:uppercase; color:#E3565C">Free in-home design consultation</span>
+      </div>
+      <h1 style="fontFamily:'Playfair Display',serif; fontWeight:400; fontSize:clamp(40px,10.5vw,72px); lineHeight:1.02; margin:0 0 20px; letterSpacing:-.01em">We design your home's lights before you ever pay a dollar.</h1>
+      <p style="fontSize:clamp(16px,4.4vw,20px); lineHeight:1.55; color:#B7BBBE; margin:0 0 32px; maxWidth:33em">A designer comes to your home, walks the property with you, and builds real mockups on your rooflines. No obligation, no deposit — just a clear picture of what your house could look like this December.</p>
+      <div style="display:flex; flexWrap:wrap; gap:12px">
+        <a href="#design-visit" style="background:#C1272D; color:#FFFFFF; padding:18px 30px; borderRadius:2px; fontSize:14px; letterSpacing:.16em; textTransform:uppercase; fontWeight:500; minHeight:56px; display:flex; alignItems:center">Book my free design visit</a>
+        <a href="tel:2565635636" style="border:1px solid rgba(236,237,238,.3); color:#ECEDEE; padding:18px 26px; borderRadius:2px; fontSize:14px; letterSpacing:.16em; textTransform:uppercase; minHeight:56px; display:flex; alignItems:center">Call instead</a>
+      </div>
+      <p style="fontSize:13px; color:#868A8E; marginTop:20px; letterSpacing:.02em">Southside &amp; Gadsden area · We supply, install, maintain, remove, and store everything.</p>
+    </div>
+  </section>
+
+  <section style="padding:72px 20px; borderTop:1px solid rgba(236,237,238,.08)">
+    <div style="maxWidth:1080px; margin:0 auto">
+      <span style="fontSize:11px; letterSpacing:.3em; textTransform:uppercase; color:#E3565C">How it works</span>
+      <h2 style="fontFamily:'Playfair Display',serif; fontWeight:400; fontSize:clamp(30px,7.5vw,46px); lineHeight:1.1; margin:14px 0 44px; maxWidth:14em">Three steps from curiosity to a lit house.</h2>
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:28px">
+        <sc-for list="{{ steps }}" as="step" hint-placeholder-count="3">
+          <div style="display:flex; flexDirection:column; gap:12px; paddingTop:22px; borderTop:1px solid rgba(193,39,45,.35)">
+            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; color:#E3565C; letterSpacing:.1em">{{ step.num }}</span>
+            <h3 style="fontFamily:'Playfair Display',serif; fontWeight:500; fontSize:26px; margin:0; lineHeight:1.15">{{ step.title }}</h3>
+            <p style="margin:0; fontSize:16px; lineHeight:1.6; color:#B7BBBE">{{ step.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:8px 20px 72px">
+    <div style="maxWidth:1080px; margin:0 auto">
+      <div style="display:flex; flexWrap:wrap; alignItems:baseline; justifyContent:space-between; gap:12px; marginBottom:26px">
+        <h2 style="fontFamily:'Playfair Display',serif; fontWeight:400; fontSize:clamp(30px,7.5vw,46px); margin:0; lineHeight:1.1">Homes we lit last season</h2>
+        <span style="fontSize:12px; letterSpacing:.2em; textTransform:uppercase; color:#868A8E">Real installs · no stock photos</span>
+      </div>
+      <div style="display:flex; flexWrap:wrap; gap:14px">
+        <sc-for list="{{ gallery }}" as="shot" hint-placeholder-count="3">
+          <figure style="margin:0; flex:1 1 300px; minWidth:min(100%,300px); height:clamp(220px,30vw,320px); position:relative; overflow:hidden; background:repeating-linear-gradient(135deg,#1C1E21 0 12px,#17191B 12px 24px); border:1px solid rgba(236,237,238,.08)">
+            <div style="position:absolute; inset:0; backgroundSize:cover; backgroundPosition:center; backgroundImage:{{ shot.css }}"></div>
+            <figcaption style="position:absolute; left:0; bottom:0; padding:10px 12px; fontFamily:'IBM Plex Mono',monospace; fontSize:11px; color:#9CA1A5; letterSpacing:.04em">{{ shot.label }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="design-visit" style="padding:72px 20px 80px; background:#1A1C1F; borderTop:1px solid rgba(236,237,238,.08)">
+    <div style="maxWidth:980px; margin:0 auto; display:grid; gridTemplateColumns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:44px">
+      <div>
+        <span style="fontSize:11px; letterSpacing:.3em; textTransform:uppercase; color:#E3565C">Request your visit</span>
+        <h2 style="fontFamily:'Playfair Display',serif; fontWeight:400; fontSize:clamp(30px,7.5vw,44px); lineHeight:1.1; margin:14px 0 18px">Book the free design consultation.</h2>
+        <p style="fontSize:16px; lineHeight:1.6; color:#B7BBBE; margin:0 0 24px">Tell us where you are and when you're thinking. We'll confirm a time that works, walk your property, and show you mockups on your own home — then you decide.</p>
+        <ul style="listStyle:none; padding:0; margin:0; display:flex; flexDirection:column; gap:12px">
+          <sc-for list="{{ assurances }}" as="line" hint-placeholder-count="3">
+            <li style="display:flex; gap:12px; alignItems:flex-start; fontSize:15px; color:#B7BBBE; lineHeight:1.5">
+              <span style="width:6px; height:6px; background:#C1272D; borderRadius:50%; marginTop:8px; flexShrink:0"></span>
+              <span>{{ line }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+
+      <form onSubmit="{{ onSubmit }}" style="display:flex; flexDirection:column; gap:16px">
+        <label style="display:flex; flexDirection:column; gap:7px">
+          <span style="fontSize:11px; letterSpacing:.2em; textTransform:uppercase; color:#9CA1A5">Full name</span>
+          <input name="name" required="" autoComplete="name" style="background:#131416; border:1px solid rgba(236,237,238,.18); color:#ECEDEE; padding:15px 14px; fontSize:16px; borderRadius:2px; minHeight:54px; outline:none">
+        </label>
+        <label style="display:flex; flexDirection:column; gap:7px">
+          <span style="fontSize:11px; letterSpacing:.2em; textTransform:uppercase; color:#9CA1A5">Phone number</span>
+          <input name="phone" type="tel" required="" autoComplete="tel" inputMode="tel" style="background:#131416; border:1px solid rgba(236,237,238,.18); color:#ECEDEE; padding:15px 14px; fontSize:16px; borderRadius:2px; minHeight:54px; outline:none">
+        </label>
+        <label style="display:flex; flexDirection:column; gap:7px">
+          <span style="fontSize:11px; letterSpacing:.2em; textTransform:uppercase; color:#9CA1A5">Street address</span>
+          <input name="address" required="" autoComplete="street-address" style="background:#131416; border:1px solid rgba(236,237,238,.18); color:#ECEDEE; padding:15px 14px; fontSize:16px; borderRadius:2px; minHeight:54px; outline:none">
+        </label>
+        <label style="display:flex; flexDirection:column; gap:7px">
+          <span style="fontSize:11px; letterSpacing:.2em; textTransform:uppercase; color:#9CA1A5">When are you looking to get lights up?</span>
+          <select name="timeline" required="" style="background:#131416; border:1px solid rgba(236,237,238,.18); color:#ECEDEE; padding:15px 14px; fontSize:16px; borderRadius:2px; minHeight:54px; outline:none">
+            <option value="">Select one…</option>
+            <sc-for list="{{ timelines }}" as="opt" hint-placeholder-count="6">
+              <option value="{{ opt }}">{{ opt }}</option>
+            </sc-for>
+          </select>
+        </label>
+        <button type="submit" style="background:#C1272D; color:#FFFFFF; border:none; padding:19px; fontSize:14px; letterSpacing:.16em; textTransform:uppercase; fontWeight:500; borderRadius:2px; minHeight:58px; cursor:pointer; fontFamily:inherit; marginTop:6px">{{ submitLabel }}</button>
+        <p style="margin:0; fontSize:12.5px; color:#868A8E; lineHeight:1.5">{{ formNote }}</p>
+      </form>
+    </div>
+  </section>
+
+  <footer style="padding:56px 20px 40px; borderTop:1px solid rgba(236,237,238,.08)">
+    <div style="maxWidth:1080px; margin:0 auto; display:flex; flexWrap:wrap; gap:28px; justifyContent:space-between; alignItems:flex-end">
+      <div>
+        <div style="display:flex; alignItems:center; gap:12px">
+          <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/a5VHHvDH22KgS9A3xT6v/media/69bb059c3ee4087ae75d5859.png" alt="Sweet Home Exterior Cleaning" style="width:64px; height:64px; objectFit:contain; flexShrink:0" />
+          <div>
+            <div style="fontFamily:'Playfair Display',serif; fontSize:20px; letterSpacing:.03em">Sweet Home Holiday Lighting</div>
+            <div style="fontSize:11px; letterSpacing:.3em; textTransform:uppercase; color:#868A8E; marginTop:5px">A seasonal line of Sweet Home Exterior Cleaning</div>
+          </div>
+        </div>
+        <div style="fontFamily:'Playfair Display',serif; fontStyle:italic; fontSize:18px; color:#EFE3CD; marginTop:20px">“Keeping Your Sweet Home Looking Its Best.”</div>
+        <p style="fontSize:15px; color:#B7BBBE; lineHeight:1.6; margin:18px 0 0; maxWidth:34em">Local and owner-operated. We've cleaned and cared for homes across the Southside &amp; Gadsden area year-round — holiday lighting is the same crew and the same standards.</p>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:8px">
+        <a href="tel:2565635636" style="fontFamily:'Playfair Display',serif; fontSize:34px; color:#E3565C; letterSpacing:.01em">256-563-5636</a>
+        <span style="fontSize:13px; color:#868A8E">Call or text · 7 days a week during the season</span>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:sticky; bottom:0; zIndex:20; padding:12px 16px calc(12px + env(safe-area-inset-bottom)); background:linear-gradient(180deg,rgba(19,20,22,0) 0%,rgba(19,20,22,.92) 40%,#131416 100%); display:flex; gap:10px">
+    <a href="#design-visit" style="flex:2; background:#C1272D; color:#FFFFFF; textAlign:center; padding:16px; borderRadius:2px; fontSize:13px; letterSpacing:.14em; textTransform:uppercase; fontWeight:500; minHeight:52px; display:flex; alignItems:center; justifyContent:center">Free design visit</a>
+    <a href="tel:2565635636" style="flex:1; border:1px solid rgba(193,39,45,.5); color:#E3565C; textAlign:center; padding:16px; borderRadius:2px; fontSize:13px; letterSpacing:.14em; textTransform:uppercase; minHeight:52px; display:flex; alignItems:center; justifyContent:center">Call</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroPhoto&quot;:{&quot;editor&quot;:null,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;galleryPhotos&quot;:{&quot;editor&quot;:null,&quot;default&quot;:null,&quot;tsType&quot;:&quot;(string|{src:string,label:string})[]&quot;},&quot;timelineOptions&quot;:{&quot;editor&quot;:null,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+
+  ph(label, w, h) {
+    const txt = label
+      ? `<text x="24" y="${h - 22}" fill="#868A8E" font-family="IBM Plex Mono, monospace" font-size="${Math.round(w / 40)}" letter-spacing="2">${label}</text>`
+      : "";
+    return "data:image/svg+xml;utf8," + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><defs><pattern id="p" width="24" height="24" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#17191B"/><rect width="12" height="24" fill="#202327"/></pattern></defs><rect width="100%" height="100%" fill="url(#p)"/>${txt}</svg>`
+    );
+  }
+
+  renderVals() {
+    const gallery = (this.props.galleryPhotos && this.props.galleryPhotos.length
+      ? this.props.galleryPhotos
+      : [
+          "uploads/photos-1789154792640-ciwr.jpeg",
+          "uploads/photos-1789159492219-w1go.jpg",
+          "uploads/photos-1789159492078-rqmo.jpg"
+        ]
+    ).map(g => {
+      const o = typeof g === "string" ? { src: g, label: "" } : g;
+      return { ...o, css: `url("${o.src}")` };
+    });
+
+    const hero = this.props.heroPhoto || "uploads/photos-1789154792649-fs0r.jpg";
+
+    return {
+      heroPhotoCss: `url("${hero}")`,
+      gallery,
+      steps: [
+        { num: "01", title: "Request a free design visit", body: "Send your address and a rough timeline. We confirm a window by text, usually the same day." },
+        { num: "02", title: "In-home consultation with mockups", body: "We walk the property with you and build real mockups on your rooflines, trees, and columns, so you see the design on your house — not a catalog." },
+        { num: "03", title: "Professional installation", body: "Commercial-grade, custom-cut lights installed by our own crew. We maintain them all season, take them down in January, and store them for you." }
+      ],
+      assurances: [
+        "No obligation and no deposit at the consultation.",
+        "We supply commercial-grade lights — nothing to buy, nothing to store.",
+        "Takedown and off-season storage are included in every install.",
+        "Local and owner-operated, serving the Southside & Gadsden area."
+      ],
+      timelines: this.props.timelineOptions || [
+        "As soon as possible",
+        "In October",
+        "In November",
+        "In December",
+        "I'm flexible"
+      ],
+      submitLabel: this.state.sent ? "Request received — we'll call you" : "Request my free design visit",
+      formNote: this.state.sent
+        ? "Thanks. We'll reach out shortly to confirm your visit."
+        : "We only use your address to plan the visit. No spam, no door knocking.",
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
