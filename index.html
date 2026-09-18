@@ -165,33 +165,36 @@
         </ul>
       </div>
 
-      <form id="lead-form" style="flex:1 1 300px; display:flex; flex-direction:column; gap:16px">
-        <label style="display:flex; flex-direction:column; gap:7px">
-          <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">Full name</span>
-          <input name="name" required="required" autocomplete="name" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none" />
-        </label>
-        <label style="display:flex; flex-direction:column; gap:7px">
-          <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">Phone number</span>
-          <input name="phone" type="tel" required="required" autocomplete="tel" inputmode="tel" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none" />
-        </label>
-        <label style="display:flex; flex-direction:column; gap:7px">
-          <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">Street address</span>
-          <input name="address" required="required" autocomplete="street-address" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none" />
-        </label>
-        <label style="display:flex; flex-direction:column; gap:7px">
-          <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">When are you looking to get lights up?</span>
-          <select name="timeline" required="required" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none">
-            <option value="">Select one…</option>
-            <option value="As soon as possible">As soon as possible</option>
-            <option value="In October">In October</option>
-            <option value="In November">In November</option>
-            <option value="In December">In December</option>
-            <option value="I'm flexible">I'm flexible</option>
-          </select>
-        </label>
-        <button id="lead-submit" type="submit" style="background:#C8202A; color:#FFFFFF; border:none; padding:19px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; font-weight:500; border-radius:2px; min-height:58px; cursor:pointer; font-family:inherit; margin-top:6px">Request my free design</button>
-        <p id="lead-note" style="margin:0; font-size:12.5px; color:#7A7671; line-height:1.5">We only use your address to plan the mockup visit. No spam, no door knocking.</p>
-      </form>
+      <div id="lead-form-wrap" style="flex:1 1 300px; display:flex; flex-direction:column; gap:16px">
+        <form id="lead-form" style="display:flex; flex-direction:column; gap:16px">
+          <label style="display:flex; flex-direction:column; gap:7px">
+            <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">Full name</span>
+            <input name="name" required="required" autocomplete="name" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none" />
+          </label>
+          <label style="display:flex; flex-direction:column; gap:7px">
+            <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">Phone number</span>
+            <input name="phone" type="tel" required="required" autocomplete="tel" inputmode="tel" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none" />
+          </label>
+          <label style="display:flex; flex-direction:column; gap:7px">
+            <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">Street address</span>
+            <input name="address" required="required" autocomplete="street-address" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none" />
+          </label>
+          <label style="display:flex; flex-direction:column; gap:7px">
+            <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#7A7671">When are you looking to get lights up?</span>
+            <select name="timeline" required="required" style="background:#FAF7F2; border:1px solid rgba(26,26,26,.22); color:#1A1A1A; padding:15px 14px; font-size:16px; border-radius:2px; min-height:54px; outline:none">
+              <option value="">Select one…</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="In October">In October</option>
+              <option value="In November">In November</option>
+              <option value="In December">In December</option>
+              <option value="I'm flexible">I'm flexible</option>
+            </select>
+          </label>
+          <button id="lead-submit" type="submit" style="background:#C8202A; color:#FFFFFF; border:none; padding:19px; font-size:14px; letter-spacing:.14em; text-transform:uppercase; font-weight:500; border-radius:2px; min-height:58px; cursor:pointer; font-family:inherit; margin-top:6px">Request my free design</button>
+          <p id="lead-note" style="margin:0; font-size:12.5px; color:#7A7671; line-height:1.5">We only use your address to plan the mockup visit. No spam, no door knocking.</p>
+          <div id="lead-form-error" role="alert" style="display:none; background:#FDECEC; border:1px solid #C8202A; color:#7A1418; padding:16px; font-size:14.5px; line-height:1.5; border-radius:2px"></div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -219,10 +222,51 @@
 </div>
 
 <script>
+  var LEAD_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/a5VHHvDH22KgS9A3xT6v/webhook-trigger/f301063f-04a6-49fd-8cb7-ec1e635df4db';
+
   document.getElementById('lead-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    document.getElementById('lead-submit').textContent = "Request received — we'll call you";
-    document.getElementById('lead-note').textContent = "Thanks. We'll reach out shortly to confirm your visit.";
+
+    var form = e.target;
+    var submitBtn = document.getElementById('lead-submit');
+    var errorBox = document.getElementById('lead-form-error');
+    var originalButtonText = submitBtn.textContent;
+
+    errorBox.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '.6';
+    submitBtn.style.cursor = 'not-allowed';
+    submitBtn.textContent = 'Sending…';
+
+    var payload = {
+      full_name: form.name.value,
+      phone_number: form.phone.value,
+      street_address: form.address.value,
+      timeline: form.timeline.value
+    };
+
+    fetch(LEAD_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (response) {
+      if (!response.ok) {
+        throw new Error('Webhook responded with status ' + response.status);
+      }
+      document.getElementById('lead-form-wrap').innerHTML =
+        '<div style="background:#FFFFFF; border:1px solid rgba(21,128,61,.35); border-radius:2px; padding:28px; display:flex; flex-direction:column; gap:10px">' +
+          '<span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#15803D; font-weight:600">Request received</span>' +
+          '<h3 style="font-family:\'Playfair Display\',serif; font-weight:600; font-size:24px; margin:0; line-height:1.2">Thanks — we\'ll be in touch shortly.</h3>' +
+          '<p style="margin:0; font-size:15.5px; line-height:1.6; color:#55524E">We\'ll text or call you to confirm a time for your free design visit. If you don\'t hear from us within a day, call or text <a href="tel:2565635636" style="color:#B01F26; font-weight:600">256-563-5636</a>.</p>' +
+        '</div>';
+    }).catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = 'pointer';
+      submitBtn.textContent = originalButtonText;
+      errorBox.innerHTML = 'We couldn\'t send your request. Please call or text us directly at <a href="tel:2565635636" style="color:#B01F26; font-weight:600">256-563-5636</a> and we\'ll get you booked.';
+      errorBox.style.display = 'block';
+    });
   });
 </script>
 </body>
